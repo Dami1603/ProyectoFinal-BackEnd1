@@ -1,0 +1,61 @@
+<form id="formProduct">
+    <h2>Productos en tiempo real</h2>
+
+    <!-- Nombre del Producto -->
+    <div>
+        <label for="title">Nombre del Producto</label>
+        <input type="text" name="title" id="title" required>
+    </div>
+
+    <!-- Descripción -->
+    <div>
+        <label for="description">Descripción</label>
+        <input type="text" name="description" id="description" required>
+    </div>
+
+    <!-- Stock -->
+    <div>
+        <label for="stock">Stock</label>
+        <input type="number" name="stock" id="stock" required>
+    </div>
+
+    <!-- Imagen (URL) -->
+    <div>
+        <label for="thumbnail">Imagen (URL)</label>
+        <input type="text" name="thumbnail" id="thumbnail" required>
+    </div>
+
+    <!-- Categoría -->
+    <div>
+        <label for="category">Categoría</label>
+        <input type="text" name="category" id="category" required>
+    </div>
+
+    <!-- Precio -->
+    <div>
+        <label for="price">Precio</label>
+        <input type="number" name="price" id="price" required>
+    </div>
+
+    <!-- Estado (Checkbox) -->
+    <div>
+        <input name="status" type="checkbox" value="true" id="flexCheckChecked" checked>
+        <label for="flexCheckChecked">Estado</label>
+    </div>
+
+    <!-- Código -->
+    <div>
+        <label for="code">Código</label>
+        <input type="text" name="code" id="code" required>
+    </div>
+
+    <!-- Botón Registrar -->
+    <div>
+        <button type="submit" id="add-btn">Registrar</button>
+    </div>
+</form>
+
+<div id="list-products"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtime.js"></script>

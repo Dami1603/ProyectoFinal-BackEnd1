@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Mesa",
+    "description": "Una mesa",
+    "price": "100",
+    "category": "Muebles",
+    "status": true,
+    "thumbnail": "https://img.freepik.com/vector-premium/dibujos-animados-mesa_119631-412.jpg?semt=ais_hybrid&w=740",
+    "code": "Mesa01",
+    "stock": "10"
+  }
+]
