@@ -1,23 +1,11 @@
-<div>
-    <h1>Productos</h1>
+<h1>Proyecto Final - Dandrade Santiago Damian</h1>
 
-    <div>
-        {{#each listadeproductos}}
-        <div>
-            <div>
-                <h3>{{this.title}}</h3>
-                <ul>
-                    <li>Codigo: {{this.code}}</li>
-                    <li>ID: {{this.id}}</li>
-                    <li>Descripcion: {{this.description}}</li>
-                    <li>Precio: ${{this.price}}</li>
-                    <li>Categoria: {{this.category}}</li>
-                    <li>Estado: {{this.status}}</li>
-                    <li>Stock: {{this.stock}}</li>
-                    <li>Imagen: <img src="{{this.thumbnail}}" alt="{{this.title}}" width="200"></li>
-                </ul>
-            </div>
-        </div>
-        {{/each}}
-    </div>
+<div>
+  <form action="/products" method="get" style="display:inline;">
+    <button type="submit">Ver Productos</button>
+  </form>
+
+  <form action="/realtimeproducts" method="get" style="display:inline;">
+    <button type="submit">Realtime Productos</button>
+  </form>
 </div>

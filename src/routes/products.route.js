@@ -3,18 +3,18 @@ import ProductManager from "../manager/productManager.js"
 import { __dirname } from "../utils.js"
 
 
-const manager=new ProductManager(__dirname+'/database/products.json')
+const manager=new ProductManager()
 
 const routerProducts =Router()
 
-routerProducts.get("/products",async(req,res)=>{
+routerProducts.get("/",async(req,res)=>{
     const products= await manager.getProducts(req.query)
     res.json({products})
 })
 
 
 
-routerProducts.get("/products/:pid", async (req, res) => {
+routerProducts.get("/:pid", async (req, res) => {
     try {
         const productfind = await manager.getProductbyId(req.params);
         if (!productfind) {
@@ -26,7 +26,7 @@ routerProducts.get("/products/:pid", async (req, res) => {
     }
 });
 
-routerProducts.post("/products", async (req, res) => {
+routerProducts.post("/", async (req, res) => {
     try {
         const newproduct = await manager.addProduct(req.body);
         if (!newproduct) {
@@ -38,7 +38,7 @@ routerProducts.post("/products", async (req, res) => {
     }
 });
 
-routerProducts.put("/products/:pid", async (req, res) => {
+routerProducts.put("/:pid", async (req, res) => {
     try {
         const updatedproduct = await manager.updateProduct(req.params, req.body);
         if (!updatedproduct) {
@@ -50,7 +50,7 @@ routerProducts.put("/products/:pid", async (req, res) => {
     }
 });
 
-routerProducts.delete("/products/:pid", async (req, res) => {
+routerProducts.delete("/:pid", async (req, res) => {
     try {
         const id = parseInt(req.params.pid);
         const deleteproduct = await manager.deleteProduct(id);

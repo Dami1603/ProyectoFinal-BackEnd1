@@ -5,11 +5,18 @@ import {__dirname} from "./utils.js"
 
 import viewRoutes from './routes/views.route.js'
 import routerProducts from "./routes/products.route.js";
+import cartRouter from './routes/carts.route.js';
 import socketProducts from "./listeners/socketProducts.js"
 
 //import socket
 import { Server } from "socket.io";
 
+//import Mongoose & .env usando dotenv
+import { config } from "dotenv";
+import { connectDB } from "./database/db.js";
+
+config()
+connectDB()
 
 //settings
 const app = express();
@@ -31,7 +38,9 @@ app.use(express.static(__dirname + "/public"));
 
 //routes
 app.use("/", viewRoutes),
-app.use("/api", routerProducts)
+app.use("/api/products", routerProducts)
+app.use('/api/carts', cartRouter);
+
 
 const socketServer = new Server(server)
 
